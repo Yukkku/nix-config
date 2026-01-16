@@ -9,6 +9,7 @@ _: {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  networking.hostName = "yukkku-laptop";
   networking.networkmanager.enable = true;
 
   console.keyMap = "jp106";
