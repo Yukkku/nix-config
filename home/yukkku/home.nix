@@ -7,6 +7,7 @@
     screenfetch
     htop
     grim
+    tree
     musescore
     golly
 
