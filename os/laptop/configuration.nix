@@ -12,6 +12,10 @@ _: {
   networking.hostName = "yukkku-laptop";
   networking.networkmanager.enable = true;
 
+  networking.wireless = {
+    enable = true;
+  };
+
   console.keyMap = "jp106";
   time.timeZone = "Asia/Tokyo";
 
