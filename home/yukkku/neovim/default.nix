@@ -1,25 +1,5 @@
 { pkgs, ... }:
 {
-  home.username = "yukkku";
-  home.homeDirectory = "/home/yukkku";
-
-  home.packages = with pkgs; [
-    screenfetch
-    htop
-    tree
-
-    nixd
-    nixfmt-rfc-style
-  ];
-
-  programs.git = {
-    enable = true;
-    settings = {
-      user.name = "Yukkku";
-      user.email = "yukku.scratcher@gmail.com";
-    };
-  };
-
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -33,9 +13,7 @@
       };
       "coc.preferences.formatOnSaveFiletypes" = [ "nix" ];
     };
-    plugins = [
-      pkgs.vimPlugins.vim-airline
-    ];
+    plugins = [ pkgs.vimPlugins.vim-airline ];
     extraConfig = ''
       set number
       colorscheme zaibatsu
@@ -47,9 +25,4 @@
       inoremap <silent> <C-S> <C-O>:update<CR><Esc>
     '';
   };
-
-  programs.bash.enable = true;
-
-  programs.home-manager.enable = true;
-  home.stateVersion = "25.11";
 }

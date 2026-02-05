@@ -15,11 +15,11 @@
       };
       homeConfigurations.yukkku-mini = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
-        modules = [ ./home/yukkku-mini/home.nix ];
+        modules = [ ./home/yukkku/mini.nix ];
       };
-      homeConfigurations.yukkku = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.yukkku-full = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
-        modules = [ ./home/yukkku/home.nix ];
+        modules = [ ./home/yukkku/full.nix ];
       };
     };
 }
