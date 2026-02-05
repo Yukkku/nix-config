@@ -13,6 +13,10 @@
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         modules = [ ./os/laptop/configuration.nix ];
       };
+      homeConfigurations.yukkku-mini = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        modules = [ ./home/yukkku-mini/home.nix ];
+      };
       homeConfigurations.yukkku = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
         modules = [ ./home/yukkku/home.nix ];
