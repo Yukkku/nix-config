@@ -15,7 +15,6 @@
       window.border = 0;
       window.titlebar = false;
       bars = [ ];
-      startup = [ { command = "${pkgs.swaybg}/bin/swaybg -i ${./bg.jpg}"; } ];
       modes.resize = {
         "Escape" = "mode default";
         "Down" = "resize grow height 16 px";
@@ -27,6 +26,7 @@
         "k" = "resize shrink height 16 px";
         "l" = "resize grow width 16 px";
       };
+      output."*".bg = "${./bg.jpg} fit";
     };
   };
 
