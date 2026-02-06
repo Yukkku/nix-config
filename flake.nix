@@ -9,6 +9,14 @@
   };
   outputs =
     { nixpkgs, home-manager, ... }:
+    let
+      eachSystem = nixpkgs.lib.genAttrs [
+        "aarch64-darwin"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "x86_64-linux"
+      ];
+    in
     {
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         modules = [ ./os/laptop/configuration.nix ];
@@ -21,5 +29,20 @@
         pkgs = import nixpkgs { system = "x86_64-linux"; };
         modules = [ ./home/yukkku/full.nix ];
       };
+      devShells = eachSystem (
+        system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
+        {
+          default = pkgs.mkShellNoCC {
+            name = "typstenv";
+            packages = with pkgs; [
+              nixd
+              nixfmt-rfc-style
+            ];
+          };
+        }
+      );
     };
 }

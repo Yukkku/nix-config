@@ -4,15 +4,6 @@
     enable = true;
     defaultEditor = true;
     coc.enable = true;
-    coc.settings = {
-      languageserver = {
-        nix = {
-          command = "nixd";
-          filetypes = [ "nix" ];
-        };
-      };
-      "coc.preferences.formatOnSaveFiletypes" = [ "nix" ];
-    };
     plugins = [ pkgs.vimPlugins.vim-airline ];
     extraConfig = ''
       set number
