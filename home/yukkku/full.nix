@@ -11,6 +11,7 @@ _: {
 
     ./git
     ./neovim
+    ./htop
   ];
 
   home.username = "yukkku";

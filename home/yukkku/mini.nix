@@ -2,6 +2,7 @@ _: {
   imports = [
     ./git
     ./neovim
+    ./htop
   ];
 
   home.username = "yukkku";
