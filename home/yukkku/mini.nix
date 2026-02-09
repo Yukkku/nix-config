@@ -1,8 +1,9 @@
 _: {
   imports = [
+    ./fastfetch
     ./git
-    ./neovim
     ./htop
+    ./neovim
   ];
 
   home.username = "yukkku";

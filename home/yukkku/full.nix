@@ -9,9 +9,10 @@ _: {
     ./musescore
     ./zathura
 
+    ./fastfetch
     ./git
-    ./neovim
     ./htop
+    ./neovim
   ];
 
   home.username = "yukkku";
