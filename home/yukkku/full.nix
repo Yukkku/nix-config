@@ -3,6 +3,7 @@ _: {
     ./fonts
     ./ime
     ./sway
+    ./swaylock
 
     ./firefox
     ./foot
