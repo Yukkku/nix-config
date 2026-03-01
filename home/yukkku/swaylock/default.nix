@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.hack-font ];
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
@@ -10,7 +9,7 @@
       effect-vignette = "0.7:0.2";
       fade-in = 0.2;
       clock = true;
-      font = "Hack";
+      font = "monospace";
       indicator = true;
       indicator-radius = 200;
       indicator-thickness = 20;

@@ -7,5 +7,12 @@
     noto-fonts-color-emoji
     jigmo
     hack-font
+    nerd-fonts.hack
   ];
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      monospace = [ "HackNerdFont" ];
+    };
+  };
 }
