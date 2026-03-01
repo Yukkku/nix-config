@@ -4,6 +4,7 @@ _: {
     ./ime
     ./sway
     ./swaylock
+    ./gtk
 
     ./firefox
     ./foot
