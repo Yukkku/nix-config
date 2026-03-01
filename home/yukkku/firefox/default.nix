@@ -47,7 +47,11 @@
         # 開発者ツールをウィンドウを切り離して表示
         "devtools.toolbox.host" = "window";
       };
-      userChrome = "";
+      userChrome = ''
+        #urlbar-input {
+          font-family: monospace !important;
+        }
+      '';
     };
   };
 }
