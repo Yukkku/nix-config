@@ -11,6 +11,7 @@ _: {
 
   networking.hostName = "yukkku-laptop";
   networking.networkmanager.enable = true;
+  networking.firewall.enable = false;
 
   console.keyMap = "jp106";
   time.timeZone = "Asia/Tokyo";
