@@ -4,7 +4,7 @@ _: {
     settings = {
       main.font = "monospace:pixelsize=13.3";
       main.line-height = "16px";
-      colors = {
+      color-darks = {
         background = "000000";
         alpha = 0.7;
         regular0 = "222222";
