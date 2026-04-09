@@ -15,6 +15,29 @@ _: {
       if vim.fn.filereadable(local_config) == 1 then
         dofile(local_config)
       end
+
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(args)
+          local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+
+          vim.lsp.inlay_hint.enable()
+
+          -- 自動補完
+          if client:supports_method('textDocument/completion') then
+            vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+          end
+
+          -- 保存時に自動整形
+          if client:supports_method('textDocument/formatting') then
+            vim.api.nvim_create_autocmd('BufWritePre', {
+              buffer = args.buf,
+              callback = function()
+                vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+              end,
+            })
+          end
+        end,
+      })
     '';
   };
 }
