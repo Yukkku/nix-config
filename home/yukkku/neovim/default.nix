@@ -2,6 +2,8 @@ _: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    initLua = "";
+    initLua = ''
+      vim.opt.number = true
+    '';
   };
 }
