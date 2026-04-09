@@ -5,6 +5,7 @@ _: {
     ./sway
     ./swaylock
     ./gtk
+    ./wl-clipboard
 
     ./firefox
     ./foot
