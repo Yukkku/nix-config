@@ -26,7 +26,7 @@
         "k" = "resize shrink height 16 px";
         "l" = "resize grow width 16 px";
       };
-      output."*".bg = "${./bg.jpg} fill";
+      output."*".bg = "${./bg2.jpg} fill";
     };
   };
 
