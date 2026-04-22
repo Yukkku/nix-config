@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  lib = pkgs.lib;
+in
 {
   wayland.windowManager.sway = {
     enable = true;
@@ -25,6 +28,11 @@
         "j" = "resize grow height 16 px";
         "k" = "resize shrink height 16 px";
         "l" = "resize grow width 16 px";
+      };
+      keybindings = lib.mkOptionDefault {
+        "Mod4+x" = "exec ${pkgs.shotman}/bin/shotman -c output";
+        "Mod4+c" = "exec ${pkgs.shotman}/bin/shotman -c region";
+        "Mod4+Shift+c" = "exec ${pkgs.shotman}/bin/shotman -c window";
       };
       output."*".bg = "${./bg2.jpg} fill";
     };
