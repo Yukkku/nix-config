@@ -29,6 +29,44 @@
             options = { };
           }
         ];
+        # UIのカスタマイズの設定
+        "browser.uiCustomization.state" = builtins.toJSON {
+          placements = {
+            widget-overflow-fixed-list = [ ];
+            unified-extensions-area = [ ];
+            nav-bar = [
+              "sidebar-button"
+              "back-button"
+              "forward-button"
+              "urlbar-container"
+              "vertical-spacer"
+              "unified-extensions-button"
+            ];
+            toolbar-menubar = [ "menubar-items" ];
+            TabsToolbar = [ ];
+            vertical-tabs = [
+              "tabbrowser-tabs"
+            ];
+            PersonalToolbar = [
+              "import-button"
+              "personal-bookmarks"
+            ];
+          };
+          seen = [
+            "developer-button"
+            "profiler-button"
+            "screenshot-button"
+          ];
+          dirtyAreaCache = [
+            "nav-bar"
+            "TabsToolbar"
+            "vertical-tabs"
+            "PersonalToolbar"
+            "toolbar-menubar"
+          ];
+          currentVersion = 23;
+          newElementCount = 2;
+        };
         # 翻訳のサジェストを消す
         "browser.translations.automaticallyPopup" = false;
         # 背景透明にできるようにする
