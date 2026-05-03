@@ -11,6 +11,7 @@ _: {
     ./foot
     ./musescore
     ./zathura
+    ./turbowarp
 
     ./fastfetch
     ./git
