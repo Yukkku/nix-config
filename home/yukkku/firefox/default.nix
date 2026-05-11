@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  lib = pkgs.lib;
+in
 {
   programs.firefox = {
     enable = true;
@@ -10,25 +13,14 @@
         default = "ddg";
       };
       settings = {
-        # 「新しいタブ」のショートカットを消す
-        "browser.newtabpage.activity-stream.feeds.topsites" = false;
-        # 自作拡張機能が入るようにする
-        "xpinstall.signatures.required" = false;
-        # 閉じると自動でCookie等が消えるようにす
-        "privacy.sanitize.sanitizeOnShutdown" = true;
-        # 閉じると消える項目の設定
-        "privacy.sanitize.pending" = builtins.toJSON [
-          {
-            id = "shutdown";
-            itemsToClear = [
-              "cache"
-              "formdata"
-              "browsingHistoryAndDownloads"
-              "cookiesAndStorage"
-            ];
-            options = { };
-          }
-        ];
+        "devtools.chrome.enabled" = true;
+        "devtools.debugger.remote-enabled" = true;
+        "devtools.toolbox.host" = "window";
+
+        "sidebar.main.tools" = " ";
+        "sidebar.verticalTabs" = true;
+        "sidebar.verticalTabs.dragToPinPromo.dismissed" = true;
+        "sidebar.visibility" = "hide-sidebar";
         # UIのカスタマイズの設定
         "browser.uiCustomization.state" = builtins.toJSON {
           placements = {
@@ -67,23 +59,6 @@
           currentVersion = 23;
           newElementCount = 2;
         };
-        # 翻訳のサジェストを消す
-        "browser.translations.automaticallyPopup" = false;
-        # 背景透明にできるようにする
-        "browser.tabs.allow_transparent_browser" = true;
-        # userChrome.cssの有効化
-        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-        # userChrome.cssを書くためのデバッグ機能(Ctrl + Shift + Alt + I)
-        "devtools.chrome.enabled" = true;
-        "devtools.debugger.remote-enabled" = true;
-        # 垂直タブを有効にする
-        "sidebar.verticalTabs" = true;
-        # 垂直タブをデフォルトで非表示にする
-        "sidebar.visibility" = "hide-sidebar";
-        # ブックマークバーを非表示
-        "browser.toolbars.bookmarks.visibility" = "never";
-        # 開発者ツールをウィンドウを切り離して表示
-        "devtools.toolbox.host" = "window";
       };
       userChrome = ''
         #urlbar-input {
@@ -91,5 +66,62 @@
         }
       '';
     };
+    policies = {
+      Cookies = {
+        Allow = [
+          "https://discord.com"
+          "https://github.com"
+          "https://musescore.org"
+          "https://scratch.mit.edu"
+          "https://x.com"
+        ];
+        Block = [ "https://www.youtube.com" ];
+        Locked = true;
+        Behavior = "reject-foreign";
+      };
+      SanitizeOnShutdown = true;
+      ExtensionSettings = {
+        "*".installation_mode = "blocked";
+        "wappalyzer@crunchlabz.com" = {
+          installation_mode = "normal_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/wappalyzer/latest.xpi";
+        };
+        "{893566d2-51a5-4b24-a4eb-27d948339e25}" = {
+          installation_mode = "normal_installed";
+          install_url = "file:///home/yukkku/repos/master-pass/result";
+        };
+      };
+      EnableTrackingProtection = {
+        Locked = true;
+        Category = "strict";
+      };
+      PasswordManagerEnabled = false;
+      DisplayBookmarksToolbar = "never";
+      PrimaryPassword = false;
+      Preferences =
+        lib.mapAttrs
+          (_: val: {
+            Value = val;
+            Status = "locked";
+          })
+          {
+            "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
+            "browser.newtabpage.activity-stream.feeds.topsites" = false;
+            "browser.newtabpage.activity-stream.newtabWallpapers.enabled" = false;
+            "browser.newtabpage.activity-stream.showSearch" = true;
+            "browser.tabs.allow_transparent_browser" = true;
+            "browser.translations.automaticallyPopup" = false;
+
+            # userChrome.css の有効化
+            "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
+            # カスタム拡張機能を読み込めるようにする
+            "xpinstall.signatures.required" = false;
+          };
+    };
+  };
+
+  home.sessionVariables = {
+    BROWSER = "firefox-devedition";
   };
 }
