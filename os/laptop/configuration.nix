@@ -19,7 +19,10 @@
 
   users.users.yukkku = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "dialout"
+    ];
     initialPassword = "0";
   };
 
