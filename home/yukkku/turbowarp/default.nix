@@ -6,14 +6,14 @@ let
   };
   turbowarp = pkgs.buildNpmPackage (finalAttrs: {
     pname = "turbowarp-desktop";
-    version = "1.15.5";
+    version = "1.16.0";
     src = pkgs.fetchFromGitHub {
       owner = "TurboWarp";
       repo = "desktop";
       tag = "v${finalAttrs.version}";
-      hash = "sha256-hbWhmezS8Juz3St7EwfGm8HMPgJXCAt2dyxHw/nuzzI=";
+      hash = "sha256-7YtjPyqYCMmraB+gagBrADfoFDLPC2mifHs6WPHc1Yg=";
     };
-    npmDepsHash = "sha256-iFg51IYp8TPhOhGikDQ0fsksM/k37+I+Xzo5Bxtpk48=";
+    npmDepsHash = "sha256-mSMhcCu3jc9dcUhjye8LHZhS4Q6eadsp9SVXnfvzOkU=";
     npmDepsFetcherVersion = 2;
     forceGitDeps = true;
     makeCacheWritable = true;
