@@ -4,6 +4,7 @@ _: {
     ./git
     ./htop
     ./neovim
+    ./tdf
   ];
 
   home.username = "yukkku";
