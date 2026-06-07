@@ -12,6 +12,7 @@ _: {
     ./musescore
     ./zathura
     ./turbowarp
+    ./golly
 
     ./fastfetch
     ./git
