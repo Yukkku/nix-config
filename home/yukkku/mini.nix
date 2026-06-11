@@ -5,6 +5,7 @@ _: {
     ./htop
     ./neovim
     ./tdf
+    ./miniserve
   ];
 
   home.username = "yukkku";

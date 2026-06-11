@@ -18,6 +18,7 @@ _: {
     ./git
     ./htop
     ./neovim
+    ./miniserve
   ];
 
   home.username = "yukkku";
