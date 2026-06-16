@@ -6,6 +6,7 @@ _: {
     ./neovim
     ./tdf
     ./miniserve
+    ./genicon
   ];
 
   home.username = "yukkku";

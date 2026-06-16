@@ -19,6 +19,7 @@ _: {
     ./htop
     ./neovim
     ./miniserve
+    ./genicon
   ];
 
   home.username = "yukkku";

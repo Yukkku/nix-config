@@ -11,6 +11,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    yukkku-genicon = {
+      url = "github:yukkku/yukkku-genicon";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -18,7 +23,7 @@
       nixos-wsl,
       home-manager,
       ...
-    }:
+    }@inputs:
     let
       eachSystem = nixpkgs.lib.genAttrs [
         "aarch64-darwin"
@@ -38,14 +43,24 @@
           ./os/lab-wsl/configuration.nix
         ];
       };
-      homeConfigurations.yukkku-mini = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-        modules = [ ./home/yukkku/mini.nix ];
-      };
-      homeConfigurations.yukkku-full = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-        modules = [ ./home/yukkku/full.nix ];
-      };
+      homeConfigurations.yukkku-mini =
+        let
+          system = "x86_64-linux";
+        in
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs { inherit system; };
+          extraSpecialArgs = { inherit inputs system; };
+          modules = [ ./home/yukkku/mini.nix ];
+        };
+      homeConfigurations.yukkku-full =
+        let
+          system = "x86_64-linux";
+        in
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs { inherit system; };
+          extraSpecialArgs = { inherit inputs system; };
+          modules = [ ./home/yukkku/full.nix ];
+        };
       devShells = eachSystem (
         system:
         let
