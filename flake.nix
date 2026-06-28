@@ -33,9 +33,28 @@
       ];
     in
     {
-      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        modules = [ ./os/laptop/configuration.nix ];
-      };
+      nixosConfigurations.laptop =
+        let
+          system = "x86_64-linux";
+        in
+        nixpkgs.lib.nixosSystem {
+          modules = [
+            ./os/laptop/configuration.nix
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs system; };
+              home-manager.users.yukkku = import ./home/yukkku/full.nix;
+
+              environment.pathsToLink = [
+                "/share/applications"
+                "/share/xdg-desktop-portal"
+              ];
+            }
+          ];
+        };
       nixosConfigurations.lab-wsl = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
