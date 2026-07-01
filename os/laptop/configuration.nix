@@ -14,8 +14,6 @@
 
   hardware.graphics.enable = true;
 
-  programs.dconf.enable = true;
-
   services.fprintd = {
     enable = true;
     tod = {
