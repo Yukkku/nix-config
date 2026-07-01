@@ -4,12 +4,11 @@ _: {
     ./hardware-configuration.nix
     ../systemd-boot
     ../pipewire
+    ../network
     ../yukkku/full.nix
   ];
 
   networking.hostName = "yukkku-sub-laptop";
-  networking.networkmanager.enable = true;
-  networking.firewall.enable = false;
 
   hardware.graphics.enable = true;
 
