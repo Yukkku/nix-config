@@ -1,22 +1,15 @@
 _: {
   imports = [
+    ../base.nix
     ./hardware-configuration.nix
     ../systemd-boot
     ../pipewire
     ../yukkku/full.nix
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   networking.hostName = "yukkku-sub-laptop";
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
-
-  console.keyMap = "jp106";
-  time.timeZone = "Asia/Tokyo";
 
   hardware.graphics.enable = true;
 
