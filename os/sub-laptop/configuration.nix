@@ -1,6 +1,7 @@
 _: {
   imports = [
     ./hardware-configuration.nix
+    ../systemd-boot
     ../pipewire
     ../yukkku/full.nix
   ];
@@ -9,9 +10,6 @@ _: {
     "nix-command"
     "flakes"
   ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "yukkku-sub-laptop";
   networking.networkmanager.enable = true;
