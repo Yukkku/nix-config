@@ -20,7 +20,6 @@
   outputs =
     {
       nixpkgs,
-      nixos-wsl,
       home-manager,
       ...
     }@inputs:
@@ -33,28 +32,39 @@
       ];
     in
     {
-      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [ ./os/laptop/configuration.nix ];
+      nixosConfigurations = rec {
+        laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [ ./os/laptop/configuration.nix ];
+        };
+        yukkku-laptop = laptop;
+
+        sub-laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [ ./os/sub-laptop/configuration.nix ];
+        };
+        yukkku-sub-laptop = sub-laptop;
+
+        lab-wsl = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./os/lab-wsl/configuration.nix ];
+        };
+        yukkku-lab-wsl = lab-wsl;
       };
-      nixosConfigurations.sub-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [ ./os/sub-laptop/configuration.nix ];
+
+      homeConfigurations = {
+        yukkku-mini = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs { system = "x86_64-linux"; };
+          extraSpecialArgs = { inherit inputs; };
+          modules = [ ./home/yukkku/mini.nix ];
+        };
+        yukkku-full = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs { system = "x86_64-linux"; };
+          extraSpecialArgs = { inherit inputs; };
+          modules = [ ./home/yukkku/full.nix ];
+        };
       };
-      nixosConfigurations.lab-wsl = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [ ./os/lab-wsl/configuration.nix ];
-      };
-      homeConfigurations.yukkku-mini = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-        extraSpecialArgs = { inherit inputs; };
-        modules = [ ./home/yukkku/mini.nix ];
-      };
-      homeConfigurations.yukkku-full = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-        extraSpecialArgs = { inherit inputs; };
-        modules = [ ./home/yukkku/full.nix ];
-      };
+
       devShells = eachSystem (
         system:
         let
