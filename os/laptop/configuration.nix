@@ -1,6 +1,10 @@
 { pkgs, lib, ... }:
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ../pipewire
+    ../yukkku/full.nix
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -16,21 +20,6 @@
 
   console.keyMap = "jp106";
   time.timeZone = "Asia/Tokyo";
-
-  users.users.yukkku = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "dialout"
-    ];
-    initialPassword = "0";
-  };
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
 
   hardware.graphics.enable = true;
 

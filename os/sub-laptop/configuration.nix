@@ -1,5 +1,9 @@
 _: {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ../pipewire
+    ../yukkku/full.nix
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -23,12 +27,6 @@ _: {
       "dialout"
     ];
     initialPassword = "0";
-  };
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
   };
 
   hardware.graphics.enable = true;
