@@ -20,4 +20,6 @@
     "/share/applications"
     "/share/xdg-desktop-portal"
   ];
+
+  security.pam.services.swaylock = { };
 }

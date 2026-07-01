@@ -20,18 +20,8 @@ _: {
   console.keyMap = "jp106";
   time.timeZone = "Asia/Tokyo";
 
-  users.users.yukkku = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "dialout"
-    ];
-    initialPassword = "0";
-  };
-
   hardware.graphics.enable = true;
 
-  security.pam.services.swaylock = { };
   programs.dconf.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

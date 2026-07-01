@@ -23,7 +23,6 @@
 
   hardware.graphics.enable = true;
 
-  security.pam.services.swaylock = { };
   programs.dconf.enable = true;
 
   services.fprintd = {
