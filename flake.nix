@@ -73,7 +73,7 @@
         in
         {
           default = pkgs.mkShellNoCC {
-            name = "typstenv";
+            name = "devshell";
             packages = with pkgs; [
               nixd
               nixfmt
