@@ -21,6 +21,7 @@
     {
       nixpkgs,
       home-manager,
+      nixos-wsl,
       ...
     }@inputs:
     let
@@ -47,6 +48,7 @@
 
         lab-wsl = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
           modules = [ ./os/lab-wsl/configuration.nix ];
         };
         yukkku-lab-wsl = lab-wsl;
