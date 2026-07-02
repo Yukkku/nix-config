@@ -1,7 +1,8 @@
 { inputs, ... }: {
   imports = [
-    ../base.nix
     inputs.nixos-wsl.nixosModules.default
+
+    ../base.nix
     ../yukkku/mini.nix
   ];
 

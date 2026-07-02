@@ -1,9 +1,9 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    ../base.nix
-
     ./hardware-configuration.nix
+
+    ../base.nix
     ../systemd-boot
     ../pipewire
     ../network
