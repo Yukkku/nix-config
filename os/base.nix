@@ -6,4 +6,6 @@ _: {
 
   console.keyMap = "jp106";
   time.timeZone = "Asia/Tokyo";
+
+  programs.dconf.enable = true;
 }
