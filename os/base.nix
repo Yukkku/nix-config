@@ -7,6 +7,7 @@ _: {
   console.keyMap = "jp106";
   time.timeZone = "Asia/Tokyo";
 
+  programs.nano.enable = false;
   programs.dconf.enable = true;
 
   users.mutableUsers = false;
