@@ -8,4 +8,6 @@ _: {
   time.timeZone = "Asia/Tokyo";
 
   programs.dconf.enable = true;
+
+  users.mutableUsers = false;
 }
