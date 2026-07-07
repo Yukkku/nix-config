@@ -73,7 +73,6 @@
         in
         {
           default = pkgs.mkShellNoCC {
-            name = "devshell";
             packages = with pkgs; [
               nixd
               nixfmt
