@@ -69,6 +69,7 @@ in
     policies = {
       Cookies = {
         Allow = [
+          "https://atcoder.jp"
           "https://discord.com"
           "https://github.com"
           "https://musescore.org"
