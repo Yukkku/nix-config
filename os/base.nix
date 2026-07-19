@@ -1,4 +1,4 @@
-_: {
+{ lib, ... }: {
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -9,6 +9,7 @@ _: {
 
   programs.nano.enable = false;
   programs.dconf.enable = true;
+  environment.defaultPackages = lib.mkDefault [ ];
 
   users.mutableUsers = false;
 }
