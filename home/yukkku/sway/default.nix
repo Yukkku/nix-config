@@ -1,8 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   lib = pkgs.lib;
 in
 {
+  imports = [ ../foot ];
+
   wayland.windowManager.sway = {
     enable = true;
     config = {
@@ -35,6 +37,8 @@ in
         "Mod4+Shift+c" = "exec ${pkgs.shotman}/bin/shotman -c window";
       };
       output."*".bg = "${./bg3.jpg} fill";
+
+      terminal = lib.getExe config.programs.foot.package;
     };
   };
 
