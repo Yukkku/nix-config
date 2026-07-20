@@ -1,7 +1,9 @@
-{ pkgs, ... }:
-let
-  lib = pkgs.lib;
-in
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   programs.firefox = {
     enable = true;
@@ -63,9 +65,7 @@ in
       userChrome = ''
         :root {
           --toolbox-background-color: rgb(0, 0, 0, 0.7) !important;
-          /* --toolbox-text-color: CaptionText; */
           --toolbox-background-color-inactive: rgb(0, 0, 0, 0.7) !important;
-          /* --toolbox-text-color-inactive: InactiveCaptionText; */
         }
         #urlbar-input {
           font-family: monospace !important;
@@ -129,6 +129,6 @@ in
   };
 
   home.sessionVariables = {
-    BROWSER = "firefox-devedition";
+    BROWSER = lib.getExe config.programs.firefox.package;
   };
 }
