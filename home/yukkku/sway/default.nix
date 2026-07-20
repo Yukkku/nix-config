@@ -38,7 +38,7 @@
         "Mod4+c" = "exec ${pkgs.shotman}/bin/shotman -c region";
         "Mod4+Shift+c" = "exec ${pkgs.shotman}/bin/shotman -c window";
       };
-      output."*".bg = "${./bg3.jpg} fill";
+      output."*".bg = "${./bg4.jpg} fill";
 
       terminal = lib.getExe config.programs.foot.package;
     };
