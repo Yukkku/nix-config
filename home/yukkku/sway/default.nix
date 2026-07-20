@@ -1,7 +1,9 @@
-{ pkgs, config, ... }:
-let
-  lib = pkgs.lib;
-in
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   imports = [ ../foot ];
 
