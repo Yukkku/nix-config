@@ -61,6 +61,12 @@ in
         };
       };
       userChrome = ''
+        :root {
+          --toolbox-background-color: rgb(0, 0, 0, 0.7) !important;
+          /* --toolbox-text-color: CaptionText; */
+          --toolbox-background-color-inactive: rgb(0, 0, 0, 0.7) !important;
+          /* --toolbox-text-color-inactive: InactiveCaptionText; */
+        }
         #urlbar-input {
           font-family: monospace !important;
         }

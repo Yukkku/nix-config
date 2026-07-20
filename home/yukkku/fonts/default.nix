@@ -13,6 +13,14 @@
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
+      sansSerif = [
+        "Noto Sans"
+        "Noto Sans CJK JP"
+      ];
+      serif = [
+        "Noto Serif"
+        "Noto Serif CJK JP"
+      ];
       monospace = [ "HackNerdFont" ];
     };
   };
