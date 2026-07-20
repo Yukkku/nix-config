@@ -1,4 +1,3 @@
-{ ... }:
 let
   mkColor = r: g: b: rec {
     inherit r g b;
@@ -10,6 +9,8 @@ let
       "${toHex r}${toHex g}${toHex b}";
     hashHex = "#" + hex;
     cssLike = "rgb(${toString r},${toString g},${toString b})";
+
+    brighten = mkColor ((r * 3 + 255) / 4) ((g * 3 + 255) / 4) ((b * 3 + 255) / 4);
   };
 in
 rec {
