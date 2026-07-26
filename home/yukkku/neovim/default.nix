@@ -1,4 +1,6 @@
 _: {
+  imports = [ ./color.nix ];
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -6,16 +8,11 @@ _: {
       vim.opt.number = true
       vim.opt.completeopt = { "menu", "menuone", "noselect" }
       vim.opt.clipboard:append({"unnamedplus"})
+      vim.opt.expandtab = true
 
       vim.keymap.set("n", "<C-s>", ":w<CR>")
       vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>")
       vim.keymap.set("v", "<C-s>", "<Esc>:w<CR>")
-
-      vim.api.nvim_set_hl(0, "Normal", { bg = "None" })
-      vim.api.nvim_set_hl(0, "NonText", { bg = "None" })
-      vim.api.nvim_set_hl(0, "LineNr", { bg = "None" })
-      vim.api.nvim_set_hl(0, "Folded", { bg = "None" })
-      vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "None" })
 
       local local_config = vim.fn.getcwd() .. "/.vim/workspace.lua"
       if vim.fn.filereadable(local_config) == 1 then

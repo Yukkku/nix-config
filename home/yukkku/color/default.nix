@@ -17,13 +17,15 @@ rec {
   black = mkColor 34 34 34;
   white = mkColor 255 255 255;
 
-  red = mkColor 245 101 90;
-  orange = mkColor 237 147 63;
-  yellow = mkColor 219 196 52;
-  green = mkColor 80 214 93;
-  cyan = mkColor 33 213 228;
-  blue = mkColor 101 119 252;
-  magenta = mkColor 229 102 224;
+  red = mkColor 246 125 110;
+  orange = mkColor 238 148 75;
+  yellow = mkColor 219 196 59;
+  green = mkColor 97 213 115;
+  cyan = mkColor 26 212 228;
+  blue = mkColor 125 149 254;
+  magenta = mkColor 228 126 223;
+
+  gray = mkColor 174 174 174;
 
   info = green;
   warn = yellow;
