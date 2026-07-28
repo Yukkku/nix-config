@@ -1,4 +1,9 @@
-{ inputs, ... }:
+{
+  inputs,
+  lib,
+  config,
+  ...
+}:
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
@@ -7,7 +12,8 @@
     extraGroups = [
       "wheel"
       "dialout"
-    ];
+    ]
+    ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ];
     initialPassword = "0";
   };
 
