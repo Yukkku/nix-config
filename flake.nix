@@ -12,6 +12,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     yukkku-genicon = {
       url = "github:yukkku/yukkku-genicon";
       inputs.nixpkgs.follows = "nixpkgs";

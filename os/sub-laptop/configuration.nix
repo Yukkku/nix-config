@@ -1,6 +1,13 @@
-_: {
+{
+  inputs,
+  lib,
+  config,
+  ...
+}:
+{
   imports = [
     ./hardware-configuration.nix
+    inputs.impermanence.nixosModules.impermanence
 
     ../base.nix
     ../systemd-boot
@@ -9,10 +16,21 @@ _: {
     ../yukkku/full.nix
   ];
 
+  environment.persistence."/persist" = {
+    enable = true;
+    directories = [
+      "/var/lib/nixos"
+    ]
+    ++ lib.optionals config.networking.networkmanager.enable [
+      "/etc/NetworkManager/system-connections"
+    ];
+    files = [ "/etc/machine-id" ];
+  };
+
   networking.hostName = "yukkku-sub-laptop";
 
   hardware.graphics.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.11";
 }
