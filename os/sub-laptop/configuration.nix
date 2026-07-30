@@ -25,6 +25,12 @@
       "/etc/NetworkManager/system-connections"
     ];
     files = [ "/etc/machine-id" ];
+    users.yukkku = {
+      directories = [
+        ".ssh"
+        "repos"
+      ];
+    };
   };
 
   networking.hostName = "yukkku-sub-laptop";
