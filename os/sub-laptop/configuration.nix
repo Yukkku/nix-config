@@ -13,6 +13,7 @@
     ../systemd-boot
     ../pipewire
     ../network
+    ../printer
     ../yukkku/full.nix
   ];
 
