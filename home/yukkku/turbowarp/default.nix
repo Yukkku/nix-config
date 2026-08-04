@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   microbitZip = pkgs.fetchurl {
     url = "https://packagerdata.turbowarp.org/scratch-microbit-1.2.0.hex.zip";
@@ -24,7 +24,7 @@ let
       export HOME=$(mktemp -d)
       export ELECTRON_CACHE=$HOME/.cache/electron
       mkdir -p $ELECTRON_CACHE
-      ln -s ${pkgs.electron}/bin/electron $ELECTRON_CACHE/electron
+      ln -s ${lib.getExe pkgs.electron} $ELECTRON_CACHE/electron
 
       pushd node_modules/scratch-gui
       export NODE_PATH=$(pwd)/node_modules:$(pwd)/../../node_modules
@@ -43,7 +43,7 @@ let
       mkdir -p $out/opt/turbowarp $out/bin
       cp -r dist/linux-unpacked/* $out/opt/turbowarp/
 
-      makeWrapper ${pkgs.electron}/bin/electron $out/bin/turbowarp-desktop \
+      makeWrapper ${lib.getExe pkgs.electron} $out/bin/turbowarp-desktop \
         --add-flags $out/opt/turbowarp/resources/app.asar \
         --set ELECTRON_FORCE_IS_PACKAGED 1
 
