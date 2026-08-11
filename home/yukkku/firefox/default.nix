@@ -1,9 +1,14 @@
 {
   pkgs,
   lib,
+  inputs,
   config,
   ...
 }:
+let
+  system = pkgs.stdenv.hostPlatform.system;
+  addons = inputs.nix-firefox-addons.addons.${system};
+in
 {
   programs.firefox = {
     enable = true;
@@ -18,6 +23,8 @@
         "devtools.chrome.enabled" = true;
         "devtools.debugger.remote-enabled" = true;
         "devtools.toolbox.host" = "window";
+
+        "extensions.autoDisableScopes" = 0;
 
         "sidebar.main.tools" = " ";
         "sidebar.verticalTabs" = true;
@@ -71,6 +78,10 @@
           font-family: monospace !important;
         }
       '';
+      extensions.packages = with addons; [
+        wappalyzer
+        scratch-messaging-extension
+      ];
     };
     policies = {
       Cookies = {
@@ -87,17 +98,19 @@
         Behavior = "reject-foreign";
       };
       SanitizeOnShutdown = true;
-      ExtensionSettings = {
-        "*".installation_mode = "blocked";
-        "wappalyzer@crunchlabz.com" = {
-          installation_mode = "normal_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/wappalyzer/latest.xpi";
+      /*
+        ExtensionSettings = {
+          "*".installation_mode = "blocked";
+          "wappalyzer@crunchlabz.com" = {
+            installation_mode = "normal_installed";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/wappalyzer/latest.xpi";
+          };
+          "{893566d2-51a5-4b24-a4eb-27d948339e25}" = {
+            installation_mode = "normal_installed";
+            install_url = "file:///home/yukkku/repos/master-pass/result";
+          };
         };
-        "{893566d2-51a5-4b24-a4eb-27d948339e25}" = {
-          installation_mode = "normal_installed";
-          install_url = "file:///home/yukkku/repos/master-pass/result";
-        };
-      };
+      */
       EnableTrackingProtection = {
         Locked = true;
         Category = "strict";

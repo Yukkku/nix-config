@@ -18,6 +18,11 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    nix-firefox-addons = {
+      url = "github:osipog/nix-firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     yukkku-genicon = {
       url = "github:yukkku/yukkku-genicon";
       inputs.nixpkgs.follows = "nixpkgs";
