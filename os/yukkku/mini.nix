@@ -14,7 +14,7 @@
       "dialout"
     ]
     ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ];
-    initialPassword = "0";
+    hashedPassword = "$y$j9T$vdanPb3AxT/He6u9PhXxE/$bjQ6E94ZZDXGtYWH63To/xaj5nf4kADBTmKQuhhVKX/";
   };
 
   home-manager.useGlobalPkgs = true;
