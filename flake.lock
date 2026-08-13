@@ -84,11 +84,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786661597,
-        "narHash": "sha256-u38k/24xG2No2pxQPwYyURSSOulz/FIZDH+yHXXJmTI=",
+        "lastModified": 1786664045,
+        "narHash": "sha256-vFW0Ueqqm3jD3In7UWkjyszYteWXKPHoQ55g2/shY7Y=",
         "owner": "yukkku",
         "repo": "mypass",
-        "rev": "9961f3a2dad12422058df05af7a6134c4ed86abe",
+        "rev": "ba2880fa62a8704d9a7816e4ba87bacccbd0d0e9",
         "type": "github"
       },
       "original": {
