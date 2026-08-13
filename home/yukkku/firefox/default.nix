@@ -94,6 +94,7 @@ in
           "https://discord.com"
           "https://github.com"
           "https://musescore.com"
+          "https://musescore.org"
           "https://qiita.com"
           "https://scratch.mit.edu"
           "https://x.com"
