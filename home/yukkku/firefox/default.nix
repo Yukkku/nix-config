@@ -93,7 +93,8 @@ in
           "https://atcoder.jp"
           "https://discord.com"
           "https://github.com"
-          "https://musescore.org"
+          "https://musescore.com"
+          "https://qiita.com"
           "https://scratch.mit.edu"
           "https://x.com"
         ];
