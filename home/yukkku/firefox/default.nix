@@ -8,6 +8,7 @@
 let
   system = pkgs.stdenv.hostPlatform.system;
   addons = inputs.nix-firefox-addons.addons.${system};
+  mypass = inputs.mypass.packages.${system}.mypass-addon;
 in
 {
   programs.firefox = {
@@ -78,10 +79,13 @@ in
           font-family: monospace !important;
         }
       '';
-      extensions.packages = with addons; [
-        wappalyzer
-        scratch-messaging-extension
-      ];
+      extensions.packages =
+        with addons;
+        [
+          wappalyzer
+          scratch-messaging-extension
+        ]
+        ++ [ mypass ];
     };
     policies = {
       Cookies = {

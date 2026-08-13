@@ -27,6 +27,11 @@
       url = "github:yukkku/yukkku-genicon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mypass = {
+      url = "github:yukkku/mypass";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {

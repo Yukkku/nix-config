@@ -77,6 +77,26 @@
         "type": "github"
       }
     },
+    "mypass": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786661041,
+        "narHash": "sha256-C/xfzu0CCtfIuPJU7EJlWvzbgx0qBs1DRJ0xfprI0kg=",
+        "owner": "yukkku",
+        "repo": "mypass",
+        "rev": "8c0f7f7575482fc2dc3fb3014b94242721eef87a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yukkku",
+        "repo": "mypass",
+        "type": "github"
+      }
+    },
     "nix-firefox-addons": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -139,6 +159,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "impermanence": "impermanence",
+        "mypass": "mypass",
         "nix-firefox-addons": "nix-firefox-addons",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
