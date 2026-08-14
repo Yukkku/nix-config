@@ -84,6 +84,7 @@
       Cookies = {
         Allow = [
           "https://atcoder.jp"
+          "https://bsky.app"
           "https://discord.com"
           "https://github.com"
           "https://misskey.io"

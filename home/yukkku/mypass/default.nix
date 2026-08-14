@@ -11,6 +11,9 @@
         "atcoder.jp" = {
           len = 200;
         };
+        "bsky.app" = {
+          len = 200;
+        };
         "discord.com" = {
           len = 72;
         };
