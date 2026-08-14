@@ -91,6 +91,7 @@
           "https://musescore.org"
           "https://qiita.com"
           "https://scratch.mit.edu"
+          "https://www.instagram.com"
           "https://x.com"
         ];
         Block = [ "https://www.youtube.com" ];

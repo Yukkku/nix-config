@@ -35,6 +35,9 @@
         "scratch.mit.edu" = {
           len = 200;
         };
+        "www.instagram.com" = {
+          len = 200;
+        };
         "x.com" = {
           len = 128;
         };
