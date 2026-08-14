@@ -1,7 +1,13 @@
-{ pkgs, lib, ... }:
+{
+  inputs,
+  lib,
+  config,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
+    inputs.impermanence.nixosModules.impermanence
 
     ../base.nix
     ../systemd-boot
@@ -11,26 +17,29 @@
     ../yukkku/full.nix
   ];
 
+  environment.persistence."/persist" = {
+    enable = true;
+    directories = [
+      "/var/lib/nixos"
+    ]
+    ++ lib.optionals config.networking.networkmanager.enable [
+      "/etc/NetworkManager/system-connections"
+    ];
+    files = [ "/etc/machine-id" ];
+    users.yukkku = {
+      directories = [
+        ".ssh"
+        "repos"
+        ".config/mozilla/firefox"
+      ];
+      files = [ ".config/mypass/masterpass" ];
+    };
+  };
+
   networking.hostName = "yukkku-laptop";
 
   hardware.graphics.enable = true;
 
-  services.fprintd = {
-    enable = true;
-    tod = {
-      enable = true;
-      driver = pkgs.libfprint-2-tod1-goodix;
-    };
-  };
-
-  security.pam.services.polkit-1.fprintAuth = true;
-  services.udev.packages = [ pkgs.libfido2 ];
-
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "libfprint-2-tod1-goodix"
-    ];
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";
 }
