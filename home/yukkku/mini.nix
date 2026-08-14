@@ -7,6 +7,7 @@ _: {
     ./tdf
     ./miniserve
     ./genicon
+    ./mypass
   ];
 
   home.username = "yukkku";

@@ -20,6 +20,7 @@ _: {
     ./neovim
     ./miniserve
     ./genicon
+    ./mypass
   ];
 
   home.username = "yukkku";
