@@ -87,6 +87,7 @@
           "https://bsky.app"
           "https://discord.com"
           "https://github.com"
+          "https://ja.scratch-wiki.info"
           "https://misskey.io"
           "https://musescore.com"
           "https://musescore.org"

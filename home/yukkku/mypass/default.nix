@@ -20,6 +20,9 @@
         "github.com" = {
           len = 72;
         };
+        "ja.scratch-wiki.info" = {
+          len = 200;
+        };
         "misskey.io" = {
           len = 200;
         };
