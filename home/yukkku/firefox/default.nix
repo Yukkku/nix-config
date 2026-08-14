@@ -1,16 +1,15 @@
 {
   pkgs,
   lib,
-  inputs,
   config,
   ...
 }:
-let
-  system = pkgs.stdenv.hostPlatform.system;
-  addons = inputs.nix-firefox-addons.addons.${system};
-  mypass = inputs.mypass.packages.${system}.mypass-addon;
-in
 {
+  imports = [
+    ./extensions/wappalyzer.nix
+    ./extensions/mypass.nix
+  ];
+
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-devedition;
@@ -79,13 +78,7 @@ in
           font-family: monospace !important;
         }
       '';
-      extensions.packages =
-        with addons;
-        [
-          wappalyzer
-          scratch-messaging-extension
-        ]
-        ++ [ mypass ];
+      extensions.force = true;
     };
     policies = {
       Cookies = {
@@ -105,19 +98,9 @@ in
         Behavior = "reject-foreign";
       };
       SanitizeOnShutdown = true;
-      /*
-        ExtensionSettings = {
-          "*".installation_mode = "blocked";
-          "wappalyzer@crunchlabz.com" = {
-            installation_mode = "normal_installed";
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/wappalyzer/latest.xpi";
-          };
-          "{893566d2-51a5-4b24-a4eb-27d948339e25}" = {
-            installation_mode = "normal_installed";
-            install_url = "file:///home/yukkku/repos/master-pass/result";
-          };
-        };
-      */
+      ExtensionSettings = {
+        "*".installation_mode = "blocked";
+      };
       EnableTrackingProtection = {
         Locked = true;
         Category = "strict";
