@@ -99,7 +99,7 @@
       };
       SanitizeOnShutdown = true;
       ExtensionSettings = {
-        "*".installation_mode = "blocked";
+        # "*".installation_mode = "blocked";
       };
       EnableTrackingProtection = {
         Locked = true;

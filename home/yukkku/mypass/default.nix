@@ -5,6 +5,9 @@
     enable = true;
     config = {
       services = {
+        "accounts.google.com" = {
+          len = 100;
+        };
         "atcoder.jp" = {
           len = 200;
         };
