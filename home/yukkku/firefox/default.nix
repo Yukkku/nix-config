@@ -27,6 +27,8 @@
 
         "extensions.autoDisableScopes" = 0;
 
+        "media.webspeech.synth.dont_notify_on_error" = true;
+
         "sidebar.main.tools" = " ";
         "sidebar.verticalTabs" = true;
         "sidebar.verticalTabs.dragToPinPromo.dismissed" = true;
