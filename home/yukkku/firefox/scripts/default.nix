@@ -2,6 +2,7 @@
 let
   scripts = map (path: pkgs.callPackage path { }) [
     ./atcoder-problems.nix
+    ./discord.nix
     ./github.nix
     ./nix-search.nix
     ./rustdoc.nix
