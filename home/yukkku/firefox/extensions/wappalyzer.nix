@@ -6,9 +6,7 @@ let
 in
 {
   programs.firefox = {
-    profiles.dev-edition-default = {
-      extensions.packages = [ wappalyzer ];
-    };
+    profiles.dev-edition-default.extensions.packages = [ wappalyzer ];
     policies.ExtensionSettings.${guid}.installation_mode = "normal_installed";
   };
 }

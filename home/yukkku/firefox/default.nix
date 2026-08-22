@@ -9,6 +9,7 @@
     ./extensions/wappalyzer.nix
     ./extensions/mypass.nix
     ./extensions/nos2x-fox.nix
+    ./scripts
   ];
 
   programs.firefox = {
@@ -76,12 +77,13 @@
         :root {
           --toolbox-background-color: rgb(0, 0, 0, 0.7) !important;
           --toolbox-background-color-inactive: rgb(0, 0, 0, 0.7) !important;
+          --tabpanel-background-color: transparent !important;
         }
         #urlbar-input {
           font-family: monospace !important;
         }
       '';
-      extensions.force = true;
+      # extensions.force = true;
     };
     policies = {
       Cookies = {

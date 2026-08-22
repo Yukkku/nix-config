@@ -6,9 +6,7 @@ let
 in
 {
   programs.firefox = {
-    profiles.dev-edition-default = {
-      extensions.packages = [ nos2x-fox ];
-    };
+    profiles.dev-edition-default.extensions.packages = [ nos2x-fox ];
     policies.ExtensionSettings.${guid}.installation_mode = "normal_installed";
   };
 }

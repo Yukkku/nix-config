@@ -14,8 +14,11 @@ in
   programs.firefox = {
     profiles.dev-edition-default.extensions = {
       packages = [ mypass-addon ];
-      settings.${guid}.settings = lib.mkIf config.programs.mypass.enable {
-        config = config.programs.mypass.config;
+      settings.${guid} = {
+        force = true;
+        settings = lib.mkIf config.programs.mypass.enable {
+          config = config.programs.mypass.config;
+        };
       };
     };
     policies.ExtensionSettings.${guid}.installation_mode = "normal_installed";
