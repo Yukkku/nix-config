@@ -54,6 +54,7 @@ let
       mkdir -p $dst
       zip "$dst/${guid}.xpi" *
     '';
+    passthru.addonId = guid;
   };
 in
 {
