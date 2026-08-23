@@ -1,14 +1,16 @@
 { pkgs, lib, ... }:
 let
-  scripts = map (path: pkgs.callPackage path { }) [
-    ./atcoder-problems.nix
-    ./discord.nix
-    ./github.nix
-    ./nix-search.nix
-    ./rustdoc.nix
-    ./twitter.nix
-    ./wikipedia-ja.nix
-  ];
+  scripts = map (path: import path pkgs) (
+    lib.flatten [
+      ./atcoder-problems.nix
+      ./discord.nix
+      ./github.nix
+      ./nix-search.nix
+      ./rustdoc.nix
+      ./twitter.nix
+      ./wikipedia-ja.nix
+    ]
+  );
   guid = "{29a08fce-484b-4861-831a-ee0dc3d0d625}";
   manifest = {
     manifest_version = 3;
