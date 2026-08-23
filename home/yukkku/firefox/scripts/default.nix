@@ -13,7 +13,7 @@ let
   );
   guid = "{29a08fce-484b-4861-831a-ee0dc3d0d625}";
   manifest = {
-    manifest_version = 3;
+    manifest_version = 2;
     name = "Custom Scripts";
     version = "0.0.0";
     browser_specific_settings.gecko.id = guid;
