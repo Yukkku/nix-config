@@ -5,6 +5,7 @@ _: {
     ./htop
     ./neovim
     ./tdf
+    ./ssh
     ./miniserve
     ./genicon
     ./mypass

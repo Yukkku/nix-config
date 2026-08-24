@@ -2,6 +2,7 @@ _: {
   imports = [
     ./fonts
     ./ime
+    ./ssh
     ./sway
     ./swaylock
     ./gtk
