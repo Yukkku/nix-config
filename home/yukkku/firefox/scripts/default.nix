@@ -5,9 +5,11 @@ let
       ./atcoder.nix
       ./atcoder-problems.nix
       ./discord.nix
+      ./duckduckgo.nix
       ./github.nix
       ./nix-search.nix
       ./rustdoc.nix
+      ./turbowarp.nix
       ./twitter.nix
       ./wikipedia-ja.nix
     ]
