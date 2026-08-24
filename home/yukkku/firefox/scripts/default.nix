@@ -51,8 +51,8 @@ let
                 css ? null,
                 ...
               }:
-              (if js == null then { } else { ${"${builtins.hashFile "sha256" js}.js\n"} = js; })
-              // (if css == null then { } else { ${"${builtins.hashFile "sha256" css}.css\n"} = css; })
+              (if js == null then { } else { "${builtins.hashFile "sha256" js}.js" = js; })
+              // (if css == null then { } else { "${builtins.hashFile "sha256" css}.css" = css; })
             ) scripts
           )
         );
