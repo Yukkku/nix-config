@@ -8,10 +8,12 @@ let
       ./duckduckgo.nix
       ./github.nix
       ./nix-search.nix
+      ./qiita.nix
       ./rustdoc.nix
       ./turbowarp.nix
       ./twitter.nix
       ./wikipedia-ja.nix
+      ./zenn.nix
     ]
   );
   guid = "{29a08fce-484b-4861-831a-ee0dc3d0d625}";
