@@ -13,5 +13,14 @@
     .blocklySvg {
       background-color: transparent !important;
     }
+    .blocklyToolboxDiv {
+      background-color: rgba(0 0 0 / 0.5) !important;
+      & > .scratchCategoryMenu {
+        background-color: transparent !important;
+      }
+    }
+    .blocklyFlyoutBackground {
+      fill: rgba(0 0 0 / 0.5) !important;
+    }
   '';
 }
