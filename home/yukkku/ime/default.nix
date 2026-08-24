@@ -20,6 +20,7 @@
     };
     fcitx5.settings.addons.skk.globalSection = {
       InitialInputMode = "Latin";
+      CandidateChooseKey = "Qwerty Center Row (a,s,d,...)";
     };
   };
 }
