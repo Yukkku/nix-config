@@ -13,5 +13,8 @@
       --color-active-tab: rgba(0 0 0 / 0.3) !important;
       --color-active-hover-tab: rgba(0 0 0 / 0.5) !important;
     }
+    .typeahead-suggestions {
+      background-color: rgba(0 0 0 / 0.5) !important;
+    }
   '';
 }
