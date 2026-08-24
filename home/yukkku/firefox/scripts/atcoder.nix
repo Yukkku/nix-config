@@ -5,7 +5,6 @@
       localStorage.setItem("ace-options", JSON.stringify({
         theme: "ace/theme/monokai",
       }))
-      document.head.append()
     '';
     css = writeText "custom.css" ''
       :root {
