@@ -1,7 +1,8 @@
 { pkgs, lib, ... }:
 let
-  scripts = map (path: import path pkgs) (
-    lib.flatten [
+  scripts = lib.flatten (
+    map (path: import path pkgs) [
+      ./atcoder.nix
       ./atcoder-problems.nix
       ./discord.nix
       ./github.nix
@@ -36,24 +37,30 @@ let
     name = "custom-scripts";
     nativeBuildInputs = [ pkgs.zip ];
     src = pkgs.emptyDirectory;
-    installPhase = ''
-      echo ${lib.escapeShellArg (builtins.toJSON manifest)} > manifest.json
-      ${lib.join "" (
-        map (
-          {
-            js ? null,
-            css ? null,
-            ...
-          }:
-          (if js == null then "" else "ln -s ${js} ${builtins.hashFile "sha256" js}.js\n")
-          + (if css == null then "" else "ln -s ${css} ${builtins.hashFile "sha256" css}.css\n")
-        ) scripts
-      )}
+    installPhase =
+      let
+        files = (
+          lib.mergeAttrsList (
+            map (
+              {
+                js ? null,
+                css ? null,
+                ...
+              }:
+              (if js == null then { } else { ${"${builtins.hashFile "sha256" js}.js\n"} = js; })
+              // (if css == null then { } else { ${"${builtins.hashFile "sha256" css}.css\n"} = css; })
+            ) scripts
+          )
+        );
+      in
+      ''
+        echo ${lib.escapeShellArg (builtins.toJSON manifest)} > manifest.json
+        ${lib.concatMapAttrsStringSep "\n" (k: v: "ln -s ${v} ${k}") files}
 
-      dst="$out/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-      mkdir -p $dst
-      zip "$dst/${guid}.xpi" *
-    '';
+        dst="$out/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+        mkdir -p $dst
+        zip "$dst/${guid}.xpi" *
+      '';
     passthru.addonId = guid;
   };
 in
