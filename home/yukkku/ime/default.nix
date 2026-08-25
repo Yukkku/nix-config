@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  imports = [ ./myazik.nix ];
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
@@ -21,6 +22,7 @@
     fcitx5.settings.addons.skk.globalSection = {
       InitialInputMode = "Latin";
       CandidateChooseKey = "Qwerty Center Row (a,s,d,...)";
+      Rule = "myazik";
     };
   };
 }
