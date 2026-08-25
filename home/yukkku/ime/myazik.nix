@@ -122,6 +122,21 @@ let
         "]" = "」";
         "." = ".";
         "," = ",";
+
+        c = {
+          ":" = lib.listToAttrs (
+            map (
+              v:
+              let
+                hex = lib.substring 1 4 (lib.toLower (lib.toHexString (v + 65536)));
+              in
+              {
+                name = hex;
+                value = builtins.fromJSON "\"\\u${hex}\"";
+              }
+            ) ((lib.range 1 55295) ++ (lib.range 57344 65535))
+          );
+        };
       };
     in
     {
