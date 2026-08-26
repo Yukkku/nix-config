@@ -14,7 +14,7 @@ let
       "Zenkaku_Hankaku" = "set-input-mode-latin";
       "Henkan" = "next-candidate";
       "C-Henkan" = "previous-candidate";
-      "\n" = "commit";
+      "\n" = "commit-unhandled";
       ${builtins.fromJSON "\"\\b\""} = "delete";
       "Hiragana_Katakana" = "set-input-mode-katakana";
     };
@@ -24,7 +24,7 @@ let
       "Zenkaku_Hankaku" = "set-input-mode-latin";
       "Henkan" = "next-candidate";
       "C-Henkan" = "previous-candidate";
-      "\n" = "commit";
+      "\n" = "commit-unhandled";
       ${builtins.fromJSON "\"\\b\""} = "delete";
       "Hiragana_Katakana" = "set-input-mode-hiragana";
     };
