@@ -14,6 +14,7 @@ _: {
     ./zathura
     ./turbowarp
     ./golly
+    ./rofi
 
     ./fastfetch
     ./git

@@ -35,6 +35,7 @@
       };
 
       terminal = lib.getExe config.programs.foot.package;
+      menu = "${lib.getExe config.programs.rofi.package} -show run";
 
       keybindings =
         let
