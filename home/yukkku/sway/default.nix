@@ -96,6 +96,7 @@
           "${mod}+Shift+0" = "move container to workspace number 10";
 
           "${mod}+Shift+e" = "exec swaymsg exit";
+          "${mod}+r" = "mode resize";
 
           "${mod}+x" = "exec ${pkgs.shotman}/bin/shotman -c output";
           "${mod}+c" = "exec ${pkgs.shotman}/bin/shotman -c region";
