@@ -134,7 +134,7 @@ let
                 name = hex;
                 value = builtins.fromJSON "\"\\u${hex}\"";
               }
-            ) ((lib.range 1 55295) ++ (lib.range 57344 65535))
+            ) ((lib.range 1 55295) ++ (lib.range 57344 64975) ++ (lib.range 65008 65533))
           );
         };
       };
