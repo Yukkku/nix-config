@@ -21,6 +21,8 @@
       gaps.inner = 16;
       window.border = 0;
       window.titlebar = false;
+      floating.border = 0;
+      floating.titlebar = false;
       bars = [ ];
       modes.resize = {
         "Escape" = "mode default";
