@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   fcitx5-skk' = pkgs.fcitx5-skk.override (prev: {
     libskk = prev.libskk.overrideAttrs (
@@ -32,4 +32,8 @@ in
       Rule = "myazik";
     };
   };
+  xdg.dataFile."fcitx5/skk/dictionary_list".text = ''
+    type=file,file=${config.xdg.configHome}/libskk/dicts/local.dict,mode=readonly
+    type=file,file=${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L,mode=readonly
+  '';
 }

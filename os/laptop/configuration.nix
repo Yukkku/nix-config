@@ -32,7 +32,10 @@
         "repos"
         ".config/mozilla/firefox"
       ];
-      files = [ ".config/mypass/masterpass" ];
+      files = [
+        ".config/mypass/masterpass"
+        ".config/libskk/dicts/local.dict"
+      ];
     };
   };
 
