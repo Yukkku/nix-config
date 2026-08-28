@@ -1,0 +1,58 @@
+diff --git a/src-main/windows/abstract.js b/src-main/windows/abstract.js
+index fd93e6b..d34e113 100644
+--- a/src-main/windows/abstract.js
++++ b/src-main/windows/abstract.js
+@@ -167,6 +167,8 @@ class AbstractWindow {
+     /** @type {Electron.BrowserWindowConstructorOptions} */
+     const options = {};
+ 
++    options.transparent = true;
++    options.frame = false;
+     options.useContentSize = true;
+     options.minWidth = 200;
+     options.minHeight = 200;
+diff --git a/src-main/windows/editor.js b/src-main/windows/editor.js
+index 3b2ba24..f76f756 100644
+--- a/src-main/windows/editor.js
++++ b/src-main/windows/editor.js
+@@ -588,7 +588,7 @@ class EditorWindow extends ProjectRunningWindow {
+   }
+ 
+   getBackgroundColor () {
+-    return '#333333';
++    return null;
+   }
+ 
+   applySettings () {
+diff --git a/src-renderer-webpack/editor/gui/gui.css b/src-renderer-webpack/editor/gui/gui.css
+index 37a806e..80767fb 100644
+--- a/src-renderer-webpack/editor/gui/gui.css
++++ b/src-renderer-webpack/editor/gui/gui.css
+@@ -18,3 +18,27 @@ a {
+ p {
+   margin: 0;
+ }
++
++:root {
++  background-color: rgba(0 0 0 / 0.7) !important;
++  --page-background: transparent !important;
++  --ui-primary: transparent !important;
++  --ui-secondary: transparent !important;
++  --assets-background: transparent !important;
++  --ui-tertiary: rgba(0 0 0 / 0.3) !important;
++  --ui-white: rgba(0 0 0 / 0.3) !important;
++  --menu-bar-background: rgba(0 0 0 / 0.5) !important;
++}
++
++[class=blocklySvg] {
++  background-color: transparent !important;
++}
++[class=blocklyToolboxDiv] {
++  background-color: rgba(0 0 0 / 0.5) !important;
++  & > [class=scratchCategoryMenu] {
++    background-color: transparent !important;
++  }
++}
++.blocklyFlyoutBackground {
++  fill: rgba(0 0 0 / 0.5) !important;
++}

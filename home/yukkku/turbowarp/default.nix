@@ -13,6 +13,7 @@ let
       tag = "v${finalAttrs.version}";
       hash = "sha256-7YtjPyqYCMmraB+gagBrADfoFDLPC2mifHs6WPHc1Yg=";
     };
+    patches = [ ./transparent.patch ];
     npmDepsHash = "sha256-mSMhcCu3jc9dcUhjye8LHZhS4Q6eadsp9SVXnfvzOkU=";
     npmDepsFetcherVersion = 2;
     forceGitDeps = true;
