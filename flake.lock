@@ -188,11 +188,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786496792,
-        "narHash": "sha256-yck+V5yU9rKjWjOBsU0bPBQrdYsU8Sf8PBRiKk5NXQs=",
+        "lastModified": 1787905431,
+        "narHash": "sha256-mFinjzq163YY5kcnRccDfo63n4x00eR8Dqf8WgBH9ro=",
         "owner": "yukkku",
         "repo": "yukkku-genicon",
-        "rev": "811c229423ea4500ccc267d4cf439784a586fb61",
+        "rev": "ab3a6aaad65cbed087f72b6e75d7ae5ad6433352",
         "type": "github"
       },
       "original": {
