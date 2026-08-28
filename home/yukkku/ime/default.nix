@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   imports = [ ./myazik.nix ];
   i18n.inputMethod = {
     type = "fcitx5";
