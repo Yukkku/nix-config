@@ -24,7 +24,7 @@ in
         -- 下に出てるファイル名とか書いてるあの線
         StatusLine = { bg="${color.blue.hashHex}" },
         -- v押したときの, 選択してる部分
-        Visual = {},
+        Visual = { bg="${color.black.hashHex}" },
 
         Comment = { fg="${color.gray.hashHex}", italic=true },
         Constant = { fg="${color.green.hashHex}" },
