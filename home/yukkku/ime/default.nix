@@ -35,5 +35,6 @@ in
   xdg.dataFile."fcitx5/skk/dictionary_list".text = ''
     type=file,file=${config.xdg.configHome}/libskk/dicts/local.dict,mode=readonly
     type=file,file=${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L,mode=readonly
+    type=file,file=${pkgs.skkDictionaries.geo}/share/skk/SKK-JISYO.geo,mode=readonly
   '';
 }
