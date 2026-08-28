@@ -1,0 +1,44 @@
+diff --git a/libskk/context.vala b/libskk/context.vala
+index 29356d1..5542a52 100644
+--- a/libskk/context.vala
++++ b/libskk/context.vala
+@@ -665,7 +665,7 @@ namespace Skk {
+                     builder.append (handler.get_output (state));
+                 iter.previous ();
+                 state = iter.get ();
+-                builder.append ("▼");
++                builder.append ("");
+                 builder.append (state.yomi);
+                 builder.append ("【");
+             }
+diff --git a/libskk/state.vala b/libskk/state.vala
+index e231d8e..c82f4f4 100644
+--- a/libskk/state.vala
++++ b/libskk/state.vala
+@@ -938,7 +938,7 @@ namespace Skk {
+                                               out uint underline_offset,
+                                               out uint underline_nchars) {
+             underline_offset = underline_nchars = 0;
+-            return "▽" + state.abbrev.str;
++            return state.abbrev.str;
+         }
+     }
+ 
+@@ -1164,7 +1164,7 @@ namespace Skk {
+         internal override string get_preedit (State state,
+                                               out uint underline_offset,
+                                               out uint underline_nchars) {
+-            StringBuilder builder = new StringBuilder ("▽");
++            StringBuilder builder = new StringBuilder ("");
+             underline_offset = underline_nchars = 0;
+             builder.append (state.get_yomi ());
+             if (state.surrounding_text != null) {
+@@ -1288,7 +1288,7 @@ namespace Skk {
+         internal override string get_preedit (State state,
+                                               out uint underline_offset,
+                                               out uint underline_nchars) {
+-            StringBuilder builder = new StringBuilder ("▼");
++            StringBuilder builder = new StringBuilder ("");
+             underline_offset = underline_nchars = 0;
+             if (state.candidates.cursor_pos >= 0) {
+                 var c = state.candidates.get ();
