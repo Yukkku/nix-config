@@ -31,6 +31,7 @@
         ".ssh"
         "repos"
         ".config/mozilla/firefox"
+        "Documents/MuseScore4/Scores"
       ];
       files = [
         ".config/mypass/masterpass"
