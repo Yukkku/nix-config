@@ -7,7 +7,6 @@
 {
   imports = [
     ./extensions/wappalyzer.nix
-    ./extensions/mypass.nix
     ./extensions/nos2x-fox.nix
     ./scripts
   ];
