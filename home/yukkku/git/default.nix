@@ -4,6 +4,7 @@ _: {
     settings = {
       user.name = "Yukkku";
       user.email = "yukku.scratcher@gmail.com";
+      init.defaultBranch = "main";
     };
   };
 }
