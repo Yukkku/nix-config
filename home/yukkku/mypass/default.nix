@@ -20,6 +20,15 @@
         "github.com" = {
           len = 72;
         };
+        "auth.iibc-global.org" = {
+          len = 200;
+          requires = [
+            "abcdefghijklmnopqrstuvwxyz"
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            "0123456789"
+            "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+          ];
+        };
         "ja.scratch-wiki.info" = {
           len = 200;
         };
