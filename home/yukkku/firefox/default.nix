@@ -141,4 +141,25 @@
   home.sessionVariables = {
     BROWSER = lib.getExe config.programs.firefox.package;
   };
+
+  wayland.windowManager.sway.config.window.commands =
+    if (config.wayland.windowManager.sway.enable) then
+      [
+        {
+          command = "floating enable";
+          criteria = {
+            app_id = "firefox-devedition";
+            title = "^Picture-in-Picture$";
+          };
+        }
+        {
+          command = "floating enable";
+          criteria = {
+            app_id = "firefox-devedition";
+            title = "^Extension: \\(.*\\) - .* — Firefox Developer Edition$";
+          };
+        }
+      ]
+    else
+      [ ];
 }
