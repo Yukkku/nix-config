@@ -24,17 +24,21 @@
       floating.border = 0;
       floating.titlebar = false;
       bars = [ ];
-      modes.resize = {
-        "Escape" = "mode default";
-        "Down" = "resize grow height 16 px";
-        "Left" = "resize shrink width 16 px";
-        "Right" = "resize grow width 16 px";
-        "Up" = "resize shrink height 16 px";
-        "h" = "resize shrink width 16 px";
-        "j" = "resize grow height 16 px";
-        "k" = "resize shrink height 16 px";
-        "l" = "resize grow width 16 px";
-      };
+      modes.resize =
+        let
+          cfg = config.wayland.windowManager.sway.config;
+        in
+        {
+          "Escape" = "mode default";
+          "Down" = "resize grow height 16 px";
+          "Left" = "resize shrink width 16 px";
+          "Right" = "resize grow width 16 px";
+          "Up" = "resize shrink height 16 px";
+          ${cfg.left} = "resize shrink width 16 px";
+          ${cfg.down} = "resize grow height 16 px";
+          ${cfg.up} = "resize shrink height 16 px";
+          ${cfg.right} = "resize grow width 16 px";
+        };
 
       terminal = lib.getExe config.programs.foot.package;
       menu = "${lib.getExe config.programs.rofi.package} -show run";
