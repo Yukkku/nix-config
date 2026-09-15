@@ -30,10 +30,11 @@
       directories = [
         ".ssh"
         "repos"
-        ".config/mozilla/firefox"
         "Documents/MuseScore4/Scores"
       ];
       files = [
+        ".config/mozilla/firefox/dev-edition-default/cookies.sqlite"
+        ".config/mozilla/firefox/dev-edition-default/cookies.sqlite-wal"
         ".config/mypass/masterpass"
         ".config/libskk/dicts/local.dict"
       ];
