@@ -20,58 +20,7 @@
         force = true;
         default = "ddg";
       };
-      settings = {
-        "devtools.chrome.enabled" = true;
-        "devtools.debugger.remote-enabled" = true;
-        "devtools.toolbox.host" = "window";
-
-        "extensions.autoDisableScopes" = 0;
-
-        "media.webspeech.synth.dont_notify_on_error" = true;
-
-        "sidebar.main.tools" = " ";
-        "sidebar.verticalTabs" = true;
-        "sidebar.verticalTabs.dragToPinPromo.dismissed" = true;
-        "sidebar.visibility" = "hide-sidebar";
-        # UIのカスタマイズの設定
-        "browser.uiCustomization.state" = builtins.toJSON {
-          placements = {
-            widget-overflow-fixed-list = [ ];
-            unified-extensions-area = [ ];
-            nav-bar = [
-              "sidebar-button"
-              "back-button"
-              "forward-button"
-              "urlbar-container"
-              "vertical-spacer"
-              "unified-extensions-button"
-            ];
-            toolbar-menubar = [ "menubar-items" ];
-            TabsToolbar = [ ];
-            vertical-tabs = [
-              "tabbrowser-tabs"
-            ];
-            PersonalToolbar = [
-              "import-button"
-              "personal-bookmarks"
-            ];
-          };
-          seen = [
-            "developer-button"
-            "profiler-button"
-            "screenshot-button"
-          ];
-          dirtyAreaCache = [
-            "nav-bar"
-            "TabsToolbar"
-            "vertical-tabs"
-            "PersonalToolbar"
-            "toolbar-menubar"
-          ];
-          currentVersion = 23;
-          newElementCount = 2;
-        };
-      };
+      settings = { };
       userChrome = ''
         :root {
           --toolbox-background-color: rgb(0, 0, 0, 0.7) !important;
@@ -82,7 +31,6 @@
           font-family: monospace !important;
         }
       '';
-      # extensions.force = true;
     };
     policies = {
       Cookies = {
@@ -105,9 +53,6 @@
         Behavior = "reject-foreign";
       };
       SanitizeOnShutdown = true;
-      ExtensionSettings = {
-        "*".installation_mode = "blocked";
-      };
       EnableTrackingProtection = {
         Locked = true;
         Category = "strict";
@@ -115,26 +60,6 @@
       PasswordManagerEnabled = false;
       DisplayBookmarksToolbar = "never";
       PrimaryPassword = false;
-      Preferences =
-        lib.mapAttrs
-          (_: val: {
-            Value = val;
-            Status = "locked";
-          })
-          {
-            "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
-            "browser.newtabpage.activity-stream.feeds.topsites" = false;
-            "browser.newtabpage.activity-stream.newtabWallpapers.enabled" = false;
-            "browser.newtabpage.activity-stream.showSearch" = true;
-            "browser.tabs.allow_transparent_browser" = true;
-            "browser.translations.automaticallyPopup" = false;
-
-            # userChrome.css の有効化
-            "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-
-            # カスタム拡張機能を読み込めるようにする
-            "xpinstall.signatures.required" = false;
-          };
     };
   };
 
