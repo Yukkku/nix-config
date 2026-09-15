@@ -104,9 +104,9 @@
           "${mod}+Shift+e" = "exec swaymsg exit";
           "${mod}+r" = "mode resize";
 
-          "${mod}+x" = "exec ${lib.getExe pkgs.shotman} -c output";
-          "${mod}+c" = "exec ${lib.getExe pkgs.shotman} -c region";
-          "${mod}+Shift+c" = "exec ${lib.getExe pkgs.shotman} -c window";
+          "${mod}+x" = "exec ${pkgs.shotman}/bin/shotman -c output";
+          "${mod}+c" = "exec ${pkgs.shotman}/bin/shotman -c region";
+          "${mod}+Shift+c" = "exec ${pkgs.shotman}/bin/shotman -c window";
         };
 
       output."*".bg = "${./bg4.jpg} fill";
