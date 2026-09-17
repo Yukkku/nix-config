@@ -34,7 +34,19 @@
     };
     policies = {
       Cookies = {
-        Allow = [
+        Block = [ "https://www.youtube.com" ];
+        Locked = true;
+        Behavior = "reject-foreign";
+      };
+      SanitizeOnShutdown = {
+        Cache = true;
+        Cookies = true;
+        FormData = true;
+        History = true;
+        Sessions = true;
+        SiteSettings = true;
+        Locked = true;
+        Exceptions = [
           "https://atcoder.jp"
           "https://bsky.app"
           "https://discord.com"
@@ -48,11 +60,7 @@
           "https://www.instagram.com"
           "https://x.com"
         ];
-        Block = [ "https://www.youtube.com" ];
-        Locked = true;
-        Behavior = "reject-foreign";
       };
-      SanitizeOnShutdown = true;
       EnableTrackingProtection = {
         Locked = true;
         Category = "strict";
@@ -60,6 +68,126 @@
       PasswordManagerEnabled = false;
       DisplayBookmarksToolbar = "never";
       PrimaryPassword = false;
+      OverrideFirstRunPage = "";
+      SkipTermsOfUse = true;
+      TranslateEnabled = false;
+      Preferences = lib.listToAttrs (
+        lib.mapAttrsToListRecursive
+          (path: value: {
+            name = lib.join "." path;
+            inherit value;
+          })
+          {
+            # about:configにアクセスしたときに警告を表示しない
+            "browser.aboutConfig.showWarning" = false;
+            # 透過を有効化
+            "browser.tabs.allow_transparent_browser" = true;
+            # ブックマークバーを表示しない
+            "browser.toolbars.bookmarks.visibility" = "never";
+            # 開発者ツールは別ウィンドウに分ける
+            "devtools.toolbox.host" = "window";
+            # 拡張機能が自動的にインストールされるようにする
+            "extensions.autoDisableScopes" = 0;
+            # Web Speech APIの使用時にエラーが出るが, 通知しない
+            "media.webspeech.synth.dont_notify_on_error" = true;
+            # タブをPin留めする機能の紹介を消す
+            "sidebar.verticalTabs.dragToPinPromo.dismissed" = true;
+            # サイドバーが完全に隠れるようにする
+            "sidebar.visibility" = "hide-sidebar";
+            # カスタム拡張機能を読み込めるようにする
+            "xpinstall.signatures.required" = false;
+
+            # about:homeのカスタマイズ
+            # Wallpapers
+            "browser.newtabpage.activity-stream.newtabWallpapers.user.enabled" = false;
+
+            # Customize sidebar
+            # > Move sidebar to the right
+            "sidebar.position_start" = true;
+            # > Tools
+            "sidebar.main.tools" = "";
+
+            # Home and startup
+            # > Startup > Open previous windows and tabs
+            "browser.startup.page" = 1; # No
+            # > Homepage > New windows
+            "browser.startup.homepage" = "about:home";
+            # > Homepage > New tabs
+            "browser.newtabpage.enabled" = true;
+            # > Firefox Home
+            "browser.newtabpage.activity-stream" = {
+              # Search
+              showSearch = true;
+              # Shortcuts
+              "feeds.topsites" = false;
+              # Recent activity
+              "feeds.section.highlights" = false;
+              # Firefox Developer Edition logo
+              hideLogo = false;
+            };
+
+            # Search
+            # > Default search engine > Show search terms in the address bar on results pages
+            "browser.urlbar.showSearchTerms.enabled" = false;
+            # > Search engine suggestions
+            "browser.search.suggest.enabled" = false;
+            "browser.urlbar.suggest.searches" = false;
+            # > Address Bar
+            "browser.urlbar.suggest" = {
+              # Browsing history
+              history = false;
+              # Bookmarks
+              bookmark = false;
+              # Open tabs
+              openpage = false;
+              # Shortcuts
+              topsites = false;
+              # Recent searches
+              recentsearches = false;
+              # Suggest search engines to use
+              engines = false;
+              # Quick actions
+              quickactions = false;
+            };
+
+            # Passwords and autofill
+            # > Payment methods > Save and autofill payment info
+            "extensions.formautofill.creditCards.enabled" = false;
+            # > Addresses and more > Save and autofill addresses
+            "extensions.formautofill.addresses.enabled" = false;
+
+            # Appearance
+            # > Website appearance
+            "layout.css.prefers-color-scheme.content-override" = 2; # System
+
+            # Tabs and browsing
+            # > Browser layout
+            "sidebar.verticalTabs" = true;
+            # > Browser layout > Show sidebar
+            "sidebar.revamp" = true;
+
+            # Accessibility
+            # > Default zoom
+            "browser.zoom.full" = true;
+
+            "browser.uiCustomization.state" = builtins.toJSON {
+              placements = {
+                nav-bar = [
+                  "sidebar-button"
+                  "back-button"
+                  "stop-reload-button"
+                  "forward-button"
+                  "urlbar-container"
+                  "characterencoding-button"
+                  "unified-extensions-button"
+                ];
+              };
+              currentVersion = 26;
+              newElementCount = 1;
+            };
+
+          }
+      );
     };
   };
 
