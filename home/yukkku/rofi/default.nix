@@ -1,9 +1,12 @@
 { config, lib, ... }: {
   programs.rofi = {
     enable = true;
-    extraConfig = {
+    settings = {
       sort = true;
-    };
+    }
+    // (
+      if config.programs.foot.enable then { terminal = lib.getExe config.programs.foot.package; } else { }
+    );
     theme =
       let
         color = import ../color;
@@ -66,8 +69,5 @@
           text-color = mkLiteral "inherit";
         };
       };
-  }
-  // (
-    if config.programs.foot.enable then { terminal = lib.getExe config.programs.foot.package; } else { }
-  );
+  };
 }
