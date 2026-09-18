@@ -31,7 +31,7 @@
           font-family: monospace !important;
         }
         #sidebar-tools-and-extensions-splitter {
-          display: none;
+          display: none !important;
         }
         #statuspanel-label {
           background-color: rgba(0 0 0 / 0.3) !important;
