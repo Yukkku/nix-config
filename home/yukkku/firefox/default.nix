@@ -30,6 +30,14 @@
         #urlbar-input {
           font-family: monospace !important;
         }
+        #sidebar-tools-and-extensions-splitter {
+          display: none;
+        }
+        #statuspanel-label {
+          background-color: rgba(0 0 0 / 0.3) !important;
+          border: none !important;
+          font-family: monospace !important;
+        }
       '';
     };
     policies = {
@@ -84,6 +92,8 @@
             "browser.tabs.allow_transparent_browser" = true;
             # ブックマークバーを表示しない
             "browser.toolbars.bookmarks.visibility" = "never";
+            "devtools.chrome.enabled" = true;
+            "devtools.debugger.remote-enabled" = true;
             # 開発者ツールは別ウィンドウに分ける
             "devtools.toolbox.host" = "window";
             # 拡張機能が自動的にインストールされるようにする
