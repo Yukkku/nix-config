@@ -4,6 +4,22 @@
   config,
   ...
 }:
+let
+  cookie_allows = [
+    "https://atcoder.jp"
+    "https://bsky.app"
+    "https://discord.com"
+    "https://github.com"
+    "https://ja.scratch-wiki.info"
+    "https://misskey.io"
+    "https://musescore.com"
+    "https://musescore.org"
+    "https://qiita.com"
+    "https://scratch.mit.edu"
+    "https://www.instagram.com"
+    "https://x.com"
+  ];
+in
 {
   imports = [
     ./extensions/wappalyzer.nix
@@ -42,6 +58,7 @@
     };
     policies = {
       Cookies = {
+        Allow = cookie_allows;
         Block = [ "https://www.youtube.com" ];
         Locked = true;
         Behavior = "reject-foreign";
@@ -54,20 +71,7 @@
         Sessions = true;
         SiteSettings = true;
         Locked = true;
-        Exceptions = [
-          "https://atcoder.jp"
-          "https://bsky.app"
-          "https://discord.com"
-          "https://github.com"
-          "https://ja.scratch-wiki.info"
-          "https://misskey.io"
-          "https://musescore.com"
-          "https://musescore.org"
-          "https://qiita.com"
-          "https://scratch.mit.edu"
-          "https://www.instagram.com"
-          "https://x.com"
-        ];
+        Exceptions = cookie_allows;
       };
       EnableTrackingProtection = {
         Locked = true;
