@@ -7,6 +7,7 @@ let
       ./discord.nix
       ./duckduckgo.nix
       ./github.nix
+      ./mdn.nix
       ./nix-search.nix
       ./qiita.nix
       ./rustdoc.nix
