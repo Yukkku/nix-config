@@ -15,7 +15,7 @@
       --baseline-bg: rgba(0 64 0 / 0.3) !important;
     }
     .navigation {
-      background-color: rgba(0 0 0 / 0.5) !important;
+      --color-background-page: rgba(0 0 0 / 0.5) !important;
     }
   '';
 }
