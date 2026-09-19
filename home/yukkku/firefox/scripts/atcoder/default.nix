@@ -33,4 +33,10 @@
         document.documentElement.append(s);
     '';
   }
+  {
+    matches = [ "https://atcoder.jp/" ];
+    js = writeText "script.js" ''
+      location.pathname = '/home';
+    '';
+  }
 ]
