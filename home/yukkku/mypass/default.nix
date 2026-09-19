@@ -10,6 +10,10 @@
         };
         "atcoder.jp" = {
           len = 200;
+          requires = [
+            "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            "0123456789"
+          ];
         };
         "bsky.app" = {
           len = 200;
