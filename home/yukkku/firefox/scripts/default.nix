@@ -2,7 +2,7 @@
 let
   scripts = lib.flatten (
     map (path: import path pkgs) [
-      ./atcoder.nix
+      ./atcoder
       ./atcoder-problems.nix
       ./discord.nix
       ./duckduckgo.nix
