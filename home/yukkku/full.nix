@@ -15,6 +15,7 @@ _: {
     ./turbowarp
     ./golly
     ./rofi
+    ./codex
 
     ./fastfetch
     ./git
