@@ -37,7 +37,7 @@ hr {
 }
 code {
   color: #f77 /* #c7254e */;
-  background-color: rbga(0 0 0 / 0.3) /* #f9f2f4 */;
+  background-color: rgba(0 0 0 / 0.3) /* #f9f2f4 */;
 }
 pre {
   color: #fff /* #333 */;
@@ -288,6 +288,12 @@ fieldset[disabled] .form-control {
   &:is(fieldset[disabled] > *):is(:hover, :focus, .focus) {
     background-color: rgba(128 0 0 / 0.3) /* #d9534f */;
     border-color: #f77 /* #d43f3a */;
+  }
+}
+.btn-link {
+  color: #77f /* #337ab7 */;
+  &:hover, &:focus {
+    color: #aaf /* #23527c */;
   }
 }
 .dropdown-menu {
