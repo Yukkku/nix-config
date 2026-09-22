@@ -31,6 +31,7 @@
         ".ssh"
         "repos"
         "Documents/MuseScore4/Scores"
+        ".config/mozilla/firefox/dev-edition-default/storage"
       ];
       files = [
         ".config/mozilla/firefox/dev-edition-default/cookies.sqlite"
