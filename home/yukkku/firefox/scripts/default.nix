@@ -8,12 +8,12 @@ let
       ./duckduckgo.nix
       ./github.nix
       ./mdn.nix
+      ./mediawiki.nix
       ./nix-search.nix
       ./qiita.nix
       ./rustdoc.nix
       ./turbowarp.nix
       ./twitter.nix
-      ./wikipedia-ja.nix
       ./zenn.nix
     ]
   );
