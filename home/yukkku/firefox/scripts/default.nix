@@ -10,6 +10,7 @@ let
       ./mdn.nix
       ./mediawiki.nix
       ./nix-search.nix
+      ./oeis.nix
       ./qiita.nix
       ./rustdoc.nix
       ./turbowarp.nix
