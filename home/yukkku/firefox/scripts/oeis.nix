@@ -19,7 +19,7 @@
       color: inherit !important;
     }
     picture > img.banner {
-      filter: invert(100%) hue-rotate(188.5deg) saturate(780%) brightness(78.4%);
+      filter: brightness(800%) hue-rotate(216deg) brightness(155%) brightness(93.7%) invert(100%);
     }
 
     div.footer {
