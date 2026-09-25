@@ -14,6 +14,7 @@ let
     "https://misskey.io"
     "https://musescore.com"
     "https://musescore.org"
+    "https://orteil.dashnet.org"
     "https://qiita.com"
     "https://scratch.mit.edu"
     "https://www.instagram.com"
