@@ -4,6 +4,7 @@ let
     map (path: import path pkgs) [
       ./atcoder
       ./atcoder-problems.nix
+      ./crossword-dict.nix
       ./discord.nix
       ./duckduckgo.nix
       ./github.nix
