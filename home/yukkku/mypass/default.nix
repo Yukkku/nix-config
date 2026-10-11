@@ -60,6 +60,14 @@
         "x.com" = {
           len = 128;
         };
+        "smbc_id" = {
+          len = 32;
+          allow_chars = "!#$&+-./0123456789:=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_abcdefghijklmnopqrstuvwxyz|~";
+          requires = [
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+            "0123456789"
+          ];
+        };
       };
     };
   };
