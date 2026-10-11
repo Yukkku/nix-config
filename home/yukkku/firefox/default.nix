@@ -38,24 +38,7 @@ in
         default = "ddg";
       };
       settings = { };
-      userChrome = ''
-        :root {
-          --toolbox-background-color: rgb(0, 0, 0, 0.7) !important;
-          --toolbox-background-color-inactive: rgb(0, 0, 0, 0.7) !important;
-          --tabpanel-background-color: transparent !important;
-        }
-        #urlbar-input {
-          font-family: monospace !important;
-        }
-        #sidebar-tools-and-extensions-splitter {
-          display: none !important;
-        }
-        #statuspanel-label {
-          background-color: rgba(0 0 0 / 0.3) !important;
-          border: none !important;
-          font-family: monospace !important;
-        }
-      '';
+      userChrome = "";
     };
     policies = {
       Cookies = {
