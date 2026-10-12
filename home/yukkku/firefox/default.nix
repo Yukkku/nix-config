@@ -8,6 +8,7 @@ let
   cookie_allows = [
     "https://atcoder.jp"
     "https://bsky.app"
+    "https://dash.cloudflare.com"
     "https://discord.com"
     "https://github.com"
     "https://ja.scratch-wiki.info"
@@ -17,6 +18,7 @@ let
     "https://orteil.dashnet.org"
     "https://qiita.com"
     "https://scratch.mit.edu"
+    "https://vercel.com"
     "https://www.instagram.com"
     "https://x.com"
   ];
