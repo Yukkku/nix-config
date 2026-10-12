@@ -68,6 +68,14 @@
             "0123456789"
           ];
         };
+        "vpass" = {
+          len = 20;
+          allow_chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+          requires = [
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+            "0123456789"
+          ];
+        };
       };
     };
   };
