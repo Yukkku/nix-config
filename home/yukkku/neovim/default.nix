@@ -49,12 +49,14 @@ _: {
           end
 
           -- 保存時に自動整形
-          vim.api.nvim_create_autocmd('BufWritePre', {
-            buffer = args.buf,
-            callback = function()
-              vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-            end,
-          })
+          if client:supports_method('textDocument/formatting') then
+            vim.api.nvim_create_autocmd('BufWritePre', {
+              buffer = args.buf,
+              callback = function()
+                vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+              end,
+            })
+          end
         end,
       })
 
