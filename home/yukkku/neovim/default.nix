@@ -14,10 +14,28 @@ _: {
       vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>")
       vim.keymap.set("v", "<C-s>", "<Esc>:w<CR>")
 
-      local local_config = vim.fn.getcwd() .. "/.vim/workspace.lua"
-      if vim.fn.filereadable(local_config) == 1 then
-        dofile(local_config)
+
+      local function load_repo_config()
+        local repos_dir = vim.fn.expand("~/repos")
+        local cwd = vim.fn.getcwd()
+        local repo = cwd:match("^" .. vim.pesc(repos_dir) .. "/([^/]+)")
+
+        if not repo then
+          return
+        end
+
+        local config = repos_dir .. "/" .. repo .. ".lua"
+
+        if vim.fn.filereadable(config) == 1 then
+          dofile(config)
+        end
       end
+
+      vim.api.nvim_create_autocmd("DirChanged", {
+        callback = load_repo_config,
+      })
+
+      load_repo_config()
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
