@@ -10,7 +10,7 @@ _: {
 
     ./firefox
     ./foot
-    ./musescore
+    # ./musescore
     ./zathura
     ./turbowarp
     ./golly
