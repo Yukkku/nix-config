@@ -12,7 +12,4 @@
   environment.defaultPackages = lib.mkDefault [ ];
 
   users.mutableUsers = false;
-
-  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
-  networking.networkmanager.dns = "none";
 }
