@@ -1,3 +1,3 @@
 { pkgs, ... }: {
-  home.packages = [ pkgs.musescore ];
+  home.packages = [ pkgs.arduino-cli ];
 }
