@@ -18,6 +18,7 @@ let
     "https://orteil.dashnet.org"
     "https://qiita.com"
     "https://scratch.mit.edu"
+    "https://typst.app"
     "https://vercel.com"
     "https://www.instagram.com"
     "https://x.com"

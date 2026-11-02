@@ -54,6 +54,9 @@
         "scratch.mit.edu" = {
           len = 200;
         };
+        "typst.app" = {
+          len = 128;
+        };
         "www.instagram.com" = {
           len = 200;
         };
