@@ -1,14 +1,14 @@
 _: {
   imports = [
     ./fastfetch
+    ./genicon
     ./git
     ./htop
-    ./neovim
-    ./tdf
-    ./ssh
     ./miniserve
-    ./genicon
     ./mypass
+    ./neovim
+    ./ssh
+    ./tdf
   ];
 
   home.username = "yukkku";

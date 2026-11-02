@@ -1,29 +1,29 @@
 _: {
   imports = [
     ./fonts
+    ./gtk
     ./ime
     ./ssh
     ./sway
     ./swaylock
-    ./gtk
     ./wl-clipboard
 
+    ./codex
     ./firefox
     ./foot
-    ./musescore
-    ./zathura
-    ./turbowarp
     ./golly
+    ./musescore
     ./rofi
-    ./codex
+    ./turbowarp
+    ./zathura
 
     ./fastfetch
+    ./genicon
     ./git
     ./htop
-    ./neovim
     ./miniserve
-    ./genicon
     ./mypass
+    ./neovim
   ];
 
   home.username = "yukkku";
