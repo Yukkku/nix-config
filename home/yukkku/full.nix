@@ -16,7 +16,6 @@ _: {
     ./golly
     ./rofi
     ./codex
-    ./arduino
 
     ./fastfetch
     ./git
