@@ -24,6 +24,7 @@ _: {
     ./miniserve
     ./mypass
     ./neovim
+    ./ssh
   ];
 
   home.username = "yukkku";
