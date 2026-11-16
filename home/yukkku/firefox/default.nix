@@ -8,6 +8,8 @@ let
   cookie_allows = [
     "https://atcoder.jp"
     "https://bsky.app"
+    "https://chatgpt.com"
+    "https://claude.ai"
     "https://dash.cloudflare.com"
     "https://discord.com"
     "https://github.com"
@@ -28,6 +30,7 @@ in
   imports = [
     ./extensions/wappalyzer.nix
     ./extensions/nos2x-fox.nix
+    ./extensions/mypass.nix
     ./scripts
   ];
 
@@ -186,7 +189,6 @@ in
               currentVersion = 26;
               newElementCount = 1;
             };
-
           }
       );
     };
