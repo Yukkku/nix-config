@@ -84,11 +84,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790843843,
-        "narHash": "sha256-GssYasUPjtEVaaBEll11y4EtWhMhA6zS2+DO8QXWJzU=",
+        "lastModified": 1794760362,
+        "narHash": "sha256-afrJ7lRBOKdkTv3IAOmGx13O8EGEMNBdh+qIfbK75N8=",
         "owner": "yukkku",
         "repo": "mypass",
-        "rev": "6af6647011fae8b014b8a59d860501fd5ab65b70",
+        "rev": "8dc1dace56103e57b210605ab616ca177f41b94c",
         "type": "github"
       },
       "original": {
@@ -188,11 +188,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792992020,
-        "narHash": "sha256-B2hn74C3fTFxPsnzXTD8EVDDlOkJe7VPKysa3rNdSJY=",
+        "lastModified": 1794750501,
+        "narHash": "sha256-paro1lAMF4YeViJmIV7EYf5ViJ8wY4vYDaby+UdclVI=",
         "owner": "yukkku",
         "repo": "yukkku-genicon",
-        "rev": "056c5e2f58fd2b7583d736b56fe845d7a77006f4",
+        "rev": "32d2c46bd9e192ec8aded2e4b1f1296098562b93",
         "type": "github"
       },
       "original": {
