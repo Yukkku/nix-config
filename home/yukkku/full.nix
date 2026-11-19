@@ -8,7 +8,7 @@ _: {
     ./swaylock
     ./wl-clipboard
 
-    ./codex
+    ./claude-code
     ./firefox
     ./foot
     ./golly
