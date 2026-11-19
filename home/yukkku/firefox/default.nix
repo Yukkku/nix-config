@@ -12,6 +12,7 @@ let
     "https://claude.ai"
     "https://dash.cloudflare.com"
     "https://discord.com"
+    "https://discourse.nixos.org"
     "https://github.com"
     "https://ja.scratch-wiki.info"
     "https://misskey.io"
