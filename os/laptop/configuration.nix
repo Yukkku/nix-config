@@ -32,6 +32,9 @@
         "repos"
         "Documents/MuseScore4/Scores"
         ".config/mozilla/firefox/dev-edition-default/storage"
+        # Claude Code (ログイン情報・設定・履歴など)
+        # home-manager の programs.claude-code.configDir と合わせること
+        ".config/claude"
       ];
       files = [
         ".config/mozilla/firefox/dev-edition-default/cookies.sqlite"
