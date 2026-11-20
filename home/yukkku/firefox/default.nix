@@ -45,7 +45,14 @@ in
         default = "ddg";
       };
       settings = { };
-      userChrome = "";
+      userChrome = ''
+        :root {
+          --toolbox-background-color: rgba(0 0 0 / 0.7) !important;
+          --toolbox-background-color-inactive: rgba(0 0 0 / 0.7) !important;
+          --toolbox-background-image: none !important;
+          --tabpanel-background-color: transparent !important;
+        }
+      '';
     };
     policies = {
       Cookies = {
