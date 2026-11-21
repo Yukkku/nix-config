@@ -22,7 +22,7 @@
   forall = "∀";
   ge = "≥";
   "in" = "∈";
-  nf = "∞";
+  inf = "∞";
   integral = "∫";
   inter = "∩";
   le = "≤";
